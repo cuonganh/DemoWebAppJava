@@ -13,10 +13,17 @@ public class WelcomeServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
 
-		// SendRedirect
 		String username = req.getParameter("user");
 
 		PrintWriter out = res.getWriter();
-		out.println("Hello user: " + username);
+		out.println("do get Hello user: " + username);
+	}
+	
+	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
+
+		String username = req.getParameter("user");
+
+		PrintWriter out = res.getWriter();
+		out.println("do psot Hello user: " + username);
 	}
 }

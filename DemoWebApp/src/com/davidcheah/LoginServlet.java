@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
@@ -70,13 +69,13 @@ public class LoginServlet extends HttpServlet {
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 		if (username.isEmpty() || password.isEmpty()) {
-			res.sendRedirect("/LoginPage.jsp?");
+			res.sendRedirect("LoginPage.jsp");
 		} else {
 			
 			if (login(username, password)) {
 				res.sendRedirect("WelcomePage.jsp?user="+username);
 			} else {
-				res.sendRedirect("/LoginPage.jsp?");
+				res.sendRedirect("LoginPage.jsp");
 			}
 			
 		}
